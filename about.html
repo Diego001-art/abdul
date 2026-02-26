@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>О компании СтройГрупп — ремонт квартир в Москве с 2012 года</title>
+  <meta name="description" content="О компании СтройГрупп. Профессиональный ремонт квартир в Москве с 2012 года. 348 сданных объектов, гарантия 3 года, собственные бригады мастеров. Узнайте нашу историю."/>
+  <meta name="keywords" content="о компании СтройГрупп, ремонт квартир Москва компания, ремонтная компания история, бригада ремонт квартир"/>
+  <link rel="canonical" href="https://stroigrupp.ru/about.html"/>
+  <meta property="og:title" content="О компании СтройГрупп — ремонт квартир с 2012 года"/>
+  <meta property="og:description" content="Профессиональный ремонт квартир в Москве с 2012 года. 348 проектов, гарантия 3 года, собственные мастера."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://stroigrupp.ru/about.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "СтройГрупп",
+        "url": "https://stroigrupp.ru",
+        "foundingDate": "2012",
+        "description": "Профессиональный ремонт квартир под ключ в Москве с 2012 года. Косметический, капитальный и дизайнерский ремонт.",
+        "sameAs": ["https://t.me/+971589552882"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "348"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroigrupp.ru/"},
+          {"@type": "ListItem", "position": 2, "name": "О компании", "item": "https://stroigrupp.ru/about.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ── ABOUT PAGE SPECIFIC ── */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .story-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .story-text p { font-size: 16px; line-height: 1.75; color: var(--mid); margin-bottom: 16px; }
+    .story-text p:last-child { margin-bottom: 0; }
+
+    .story-aside {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .story-aside-item {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .story-aside-item:last-child { border-bottom: none; }
+    .story-aside-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: var(--light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+    }
+    .story-aside-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 4px; }
+    .story-aside-val { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -0.5px; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .values-grid { grid-template-columns: 1fr; } }
+
+    .val-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .val-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .val-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(217,95,43,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .val-card h3 { font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.3px; }
+    .val-card p { font-size: 14px; color: var(--mid); line-height: 1.65; }
+
+    .team-block {
+      background: var(--ink);
+      border-radius: var(--radius);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .team-block { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; } }
+
+    .team-text h2 { color: #fff; font-size: clamp(24px, 3.5vw, 36px); font-weight: 900; letter-spacing: -1px; margin-bottom: 16px; }
+    .team-text p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.7; margin-bottom: 0; }
+
+    .team-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .team-num-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+    .team-num { font-size: 32px; font-weight: 900; color: #fff; letter-spacing: -1px; line-height: 1; }
+    .team-num em { font-style: normal; color: var(--accent); }
+    .team-num-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 6px; line-height: 1.4; }
+
+    .guar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 640px) { .guar-grid { grid-template-columns: 1fr; } }
+
+    .guar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .guar-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+    .guar-icon {
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: rgba(217,95,43,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+    }
+    .guar-body h3 { font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.3px; }
+    .guar-body p { font-size: 14px; color: var(--mid); line-height: 1.65; margin: 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <a href="index.html" class="logo">Строй<em>Групп</em></a>
+    <nav><ul class="hdr-nav">
+      <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+      <li class="nav-drop"><a href="uslugi.html" data-i18n="nav.services">Услуги</a>
+        <ul class="drop-menu">
+          <li><a href="kosmeticheskiy-remont.html" data-i18n="nav.cosmetic">Косметический ремонт</a></li>
+          <li><a href="kapitalnyy-remont.html" data-i18n="nav.capital">Капитальный ремонт</a></li>
+          <li><a href="dizaynersky-remont.html" data-i18n="nav.design">Дизайнерский ремонт</a></li>
+        </ul>
+      </li>
+      <li><a href="prices.html" data-i18n="nav.prices">Цены</a></li>
+      <li><a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a></li>
+      <li><a href="blog.html" data-i18n="nav.blog">Блог</a></li>
+      <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+      <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+    </ul></nav>
+    <div class="hdr-right">
+      <div class="lang-sw">
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')"><span class="lang-flag">🇷🇺</span><span class="lang-code"> RU</span></button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')"><span class="lang-flag">🇬🇧</span><span class="lang-code"> EN</span></button>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')"><span class="lang-flag">🇸🇦</span><span class="lang-code"> AR</span></button>
+      </div>
+      <a href="https://t.me/+971589552882" class="hdr-tg" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span data-i18n="hdr.tg">Написать</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <ol>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li aria-current="page" data-i18n="nav.about">О компании</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-dark">
+    <div class="hero-grid"></div>
+    <div class="glow"></div>
+    <div class="wrap" style="position:relative;z-index:1;">
+      <div class="section-head" style="text-align:left;">
+        <span class="sec-tag" data-i18n="about.tag.hero">О компании</span>
+      </div>
+      <h1 data-i18n="about.h1">СтройГрупп — ремонт квартир в Москве</h1>
+      <p data-i18n="about.sub">Работаем с 2012 года. За это время сдали 348 объектов, заслужили доверие клиентов и выработали стандарты качества, которые позволяют давать гарантию 3 года на все виды работ.</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="titem">
+        <div class="titem-num">12<em>+</em></div>
+        <div class="titem-label" data-i18n="about.stat1">лет на рынке</div>
+      </div>
+      <div class="titem">
+        <div class="titem-num">348</div>
+        <div class="titem-label" data-i18n="about.stat2">проектов сдано</div>
+      </div>
+      <div class="titem">
+        <div class="titem-num">4.9</div>
+        <div class="titem-label" data-i18n="about.stat3">средний рейтинг</div>
+      </div>
+      <div class="titem">
+        <div class="titem-num">3</div>
+        <div class="titem-label" data-i18n="about.stat4">года гарантии</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag" data-i18n="about.tag2">Наша история</span>
+        <h2 data-i18n="about.h2.1">Кто мы такие</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-text">
+          <p data-i18n="about.p1">СтройГрупп основана в 2012 году командой профессиональных строителей, которые устали от рынка, где слова расходятся с делом. Мы с самого начала поставили перед собой одну цель — делать ремонт так, как хотели бы для себя: в срок, по фиксированной смете, с реальной гарантией.</p>
+          <p data-i18n="about.p2">За более чем 12 лет работы мы сдали 348 объектов в Москве и Подмосковье. Наши клиенты — это обычные люди: молодые семьи, которые делают ремонт в первой квартире, и опытные владельцы недвижимости с несколькими объектами. Все они возвращаются и рекомендуют нас друзьям.</p>
+          <p data-i18n="about.p3">Мы не пользуемся субподрядчиками. Все работы выполняют собственные бригады, которые прошли обучение и работают с нами годами. Это позволяет контролировать качество на каждом этапе и нести ответственность за результат.</p>
+          <p data-i18n="about.p4">Сегодня в компании работают специалисты по всем направлениям: отделочники, электрики, сантехники, маляры и дизайнеры. Это полный цикл — от первого замера до финишной уборки — под одной крышей.</p>
+        </div>
+        <div class="story-aside">
+          <div class="story-aside-item">
+            <div class="story-aside-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <div class="story-aside-label" data-i18n="about.aside1.label">Год основания</div>
+              <div class="story-aside-val">2012</div>
+            </div>
+          </div>
+          <div class="story-aside-item">
+            <div class="story-aside-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="story-aside-label" data-i18n="about.aside2.label">Мастеров в штате</div>
+              <div class="story-aside-val" data-i18n="about.aside2.val">40+ специалистов</div>
+            </div>
+          </div>
+          <div class="story-aside-item">
+            <div class="story-aside-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="story-aside-label" data-i18n="about.aside3.label">Зона работ</div>
+              <div class="story-aside-val" data-i18n="about.aside3.val">Москва и Подмосковье</div>
+            </div>
+          </div>
+          <div class="story-aside-item">
+            <div class="story-aside-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.94 3.4 2 2 0 0 1 3.88 1.4h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.36 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="story-aside-label" data-i18n="about.aside4.label">Языки общения</div>
+              <div class="story-aside-val">RU · EN · AR</div>
+            </div>
+          </div>
+          <div class="story-aside-item">
+            <div class="story-aside-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="story-aside-label" data-i18n="about.aside5.label">Гарантия</div>
+              <div class="story-aside-val" data-i18n="about.aside5.val">3 года письменно</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag" data-i18n="about.tag3">Наши принципы</span>
+        <h2 data-i18n="about.h2.2">Почему нам доверяют</h2>
+        <p data-i18n="about.h2.2.sub">Шесть принципов, которыми мы руководствуемся в каждом проекте</p>
+      </div>
+      <div class="values-grid">
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-i18n="about.val1.h">Фиксированная смета</h3>
+          <p data-i18n="about.val1.p">Цена, которую мы называем до начала работ — это окончательная цена. Мы не поднимаем стоимость в процессе ремонта и не добавляем скрытых платежей.</p>
+        </div>
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 data-i18n="about.val2.h">Соблюдение сроков</h3>
+          <p data-i18n="about.val2.p">Срок сдачи прописывается в договоре. Мы понимаем, что задержки — это стресс и дополнительные расходы, поэтому планируем работу заранее и держим темп.</p>
+        </div>
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 data-i18n="about.val3.h">Ежедневная отчётность</h3>
+          <p data-i18n="about.val3.p">Каждый день вы получаете фотоотчёт о ходе работ в Telegram. Вам не нужно приезжать на объект — следите за ремонтом из любой точки мира.</p>
+        </div>
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 data-i18n="about.val4.h">Гарантия 3 года</h3>
+          <p data-i18n="about.val4.p">Письменная гарантия на все виды работ. Если в течение трёх лет появятся дефекты по нашей вине — устраним бесплатно в течение 5 рабочих дней.</p>
+        </div>
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 data-i18n="about.val5.h">Собственные мастера</h3>
+          <p data-i18n="about.val5.p">Никаких субподрядчиков. Все работы выполняют наши штатные специалисты, которые прошли обучение и работают в компании от 3 до 10 лет.</p>
+        </div>
+
+        <div class="val-card">
+          <div class="val-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 data-i18n="about.val6.h">Быстрый ответ</h3>
+          <p data-i18n="about.val6.p">Отвечаем в Telegram в течение 15 минут в рабочее время. Ваш вопрос не потеряется — у нас нет длинных очередей и бюрократии.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="wrap">
+      <div class="team-block">
+        <div class="team-text">
+          <span class="sec-tag" style="color:rgba(255,255,255,0.4);margin-bottom:12px;" data-i18n="about.tag4">Наша команда</span>
+          <h2 data-i18n="about.h2.3">Профессионалы своего дела</h2>
+          <p data-i18n="about.team.p">Наша команда — это более 40 специалистов: отделочники и маляры, электрики и сантехники, дизайнеры и прорабы. Каждый мастер прошёл отбор и стажировку. Средний стаж работы в компании — 5 лет. Мы не нанимаем «разовых» рабочих — только постоянный проверенный состав.</p>
+        </div>
+        <div class="team-nums">
+          <div class="team-num-box">
+            <div class="team-num">40<em>+</em></div>
+            <div class="team-num-label" data-i18n="about.team.n1">специалистов в штате</div>
+          </div>
+          <div class="team-num-box">
+            <div class="team-num">5</div>
+            <div class="team-num-label" data-i18n="about.team.n2">лет средний стаж</div>
+          </div>
+          <div class="team-num-box">
+            <div class="team-num">6</div>
+            <div class="team-num-label" data-i18n="about.team.n3">профессий в команде</div>
+          </div>
+          <div class="team-num-box">
+            <div class="team-num">0</div>
+            <div class="team-num-label" data-i18n="about.team.n4">субподрядчиков</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag" data-i18n="about.tag5">Гарантии</span>
+        <h2 data-i18n="about.h2.4">Наши обязательства перед вами</h2>
+        <p data-i18n="about.h2.4.sub">Мы закрепляем все договорённости письменно, чтобы вы чувствовали себя защищённым</p>
+      </div>
+      <div class="guar-grid">
+
+        <div class="guar-card">
+          <div class="guar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="guar-body">
+            <h3 data-i18n="about.guar1.h">Гарантия качества 3 года</h3>
+            <p data-i18n="about.guar1.p">Письменная гарантия прописывается в договоре. Если в течение 3 лет появятся дефекты по нашей вине — устраним за свой счёт в течение 5 рабочих дней.</p>
+          </div>
+        </div>
+
+        <div class="guar-card">
+          <div class="guar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="guar-body">
+            <h3 data-i18n="about.guar2.h">Фиксированная цена</h3>
+            <p data-i18n="about.guar2.p">Смета согласовывается до начала работ и фиксируется в договоре. Цена не повышается в процессе ремонта — никаких «неожиданных» доплат.</p>
+          </div>
+        </div>
+
+        <div class="guar-card">
+          <div class="guar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="guar-body">
+            <h3 data-i18n="about.guar3.h">Соблюдение сроков</h3>
+            <p data-i18n="about.guar3.p">Срок сдачи объекта прописывается в договоре. В случае просрочки по нашей вине предусмотрена компенсация — это честно и прозрачно.</p>
+          </div>
+        </div>
+
+        <div class="guar-card">
+          <div class="guar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="guar-body">
+            <h3 data-i18n="about.guar4.h">Официальный договор</h3>
+            <p data-i18n="about.guar4.p">Работаем только по договору. Все этапы, материалы, сроки и гарантии прописываются документально. Вы защищены законодательством РФ.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services quick links -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag" data-i18n="about.tag6">Что мы делаем</span>
+        <h2 data-i18n="about.h2.5">Наши услуги</h2>
+      </div>
+      <div class="service-cards grid-3">
+        <article class="scard scard--sm">
+          <h3 data-i18n="nav.cosmetic">Косметический ремонт</h3>
+          <p data-i18n="kos.svc.cap.p">Быстрое обновление квартиры без глобальных работ. Оптимально при ограниченном бюджете.</p>
+          <div class="scard-price" data-i18n="uslugi.price.cos">от 110 AED/м²</div>
+          <a href="kosmeticheskiy-remont.html" class="btn btn-accent" data-i18n="btn.more">Подробнее</a>
+        </article>
+        <article class="scard scard--sm">
+          <h3 data-i18n="nav.capital">Капитальный ремонт</h3>
+          <p data-i18n="kap.svc.cos.p">Полный ремонт с заменой инженерных систем. Надёжно на 15–20 лет.</p>
+          <div class="scard-price" data-i18n="uslugi.price.cap">от 240 AED/м²</div>
+          <a href="kapitalnyy-remont.html" class="btn btn-accent" data-i18n="btn.more">Подробнее</a>
+        </article>
+        <article class="scard scard--sm">
+          <h3 data-i18n="nav.design">Дизайнерский ремонт</h3>
+          <p data-i18n="diz.svc.cap.p">Авторский дизайн-проект, 3D-визуализация, элитные материалы, надзор архитектора.</p>
+          <div class="scard-price" data-i18n="uslugi.price.des">от 480 AED/м²</div>
+          <a href="dizaynersky-remont.html" class="btn btn-accent" data-i18n="btn.more">Подробнее</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <div class="cta-block">
+        <h2 data-i18n="about.cta.h2">Готовы обсудить ваш проект?</h2>
+        <p data-i18n="about.cta.p">Напишите нам в Telegram — ответим в течение 15 минут, бесплатно рассчитаем стоимость ремонта и ответим на любые вопросы о компании</p>
+        <a href="https://t.me/+971589552882" class="btn btn-tg btn--lg" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span data-i18n="about.cta.btn">Написать в Telegram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="index.html" class="footer-logo">Строй<em>Групп</em></a>
+      <p class="footer-desc mt-16" data-i18n="footer.desc">Профессиональный ремонт квартир в Москве с 2012 года. Гарантия 3 года.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.services">Услуги</h4>
+      <ul>
+        <li><a href="kosmeticheskiy-remont.html" data-i18n="nav.cosmetic">Косметический ремонт</a></li>
+        <li><a href="kapitalnyy-remont.html" data-i18n="nav.capital">Капитальный ремонт</a></li>
+        <li><a href="dizaynersky-remont.html" data-i18n="nav.design">Дизайнерский ремонт</a></li>
+        <li><a href="prices.html" data-i18n="nav.prices">Цены</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.company">Компания</h4>
+      <ul>
+        <li><a href="about.html" data-i18n="nav.about">О компании</a></li>
+        <li><a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a></li>
+        <li><a href="blog.html" data-i18n="nav.blog">Блог</a></li>
+        <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Telegram</h4>
+      <ul>
+        <li><a href="https://t.me/+971589552882" target="_blank">Написать нам</a></li>
+        <li><a href="https://t.me/+971589552882" target="_blank">Задать вопрос</a></li>
+        <li><a href="https://t.me/+971589552882" target="_blank">Получить смету</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.copy">© 2024 СтройГрупп. Все права защищены.</span>
+    <a href="#" data-i18n="footer.policy">Политика конфиденциальности</a>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
