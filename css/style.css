@@ -134,6 +134,16 @@ header {
   z-index: 400;
 }
 
+/* invisible bridge that fills the 8px gap so hover isn't lost */
+.nav-drop::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
 html[dir="rtl"] .drop-menu { left: auto; right: 0; }
 
 .nav-drop:hover .drop-menu { display: block; }
