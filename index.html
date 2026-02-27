@@ -228,12 +228,13 @@
     @media (max-width: 500px) { .options-list { grid-template-columns: 1fr; } }
     .opt-item { background: #fff; padding: 16px 18px; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; transition: background 0.15s; }
     .opt-item:hover { background: var(--light); }
-    .opt-item.checked { background: #F9EDE6; }
+    .opt-item.checked { background: #F9EDE6; border-left: 3px solid var(--accent); }
     .opt-item input { display: none; }
-    .opt-cb { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
-    .opt-item.checked .opt-cb { background: var(--accent); border-color: var(--accent); }
+    .opt-cb { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 3px; flex-shrink: 0; position: relative; transition: border-color 0.15s; }
+    .opt-cb::after { content: ''; position: absolute; inset: 3px; background: transparent; border-radius: 1px; transition: background 0.15s; }
+    .opt-item.checked .opt-cb { border-color: var(--accent); }
+    .opt-item.checked .opt-cb::after { background: var(--accent); }
     .opt-cb svg { display: none; }
-    .opt-item.checked .opt-cb svg { display: block; }
     .opt-name { font-size: 14px; font-weight: 600; color: var(--ink); flex: 1; }
     .opt-price { font-size: 12px; font-weight: 700; color: var(--accent); background: rgba(217,95,43,0.08); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
 
@@ -475,25 +476,25 @@
         <span class="step-name" data-i18n="step4.name">Дополнительные работы</span>
       </div>
       <div class="options-list">
-        <label class="opt-item" onclick="toggleOpt(this)">
+        <label class="opt-item" onclick="event.preventDefault();toggleOpt(this)">
           <input type="checkbox" data-price="1400"/>
           <div class="opt-cb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="opt-name" data-i18n="opt0.name">Демонтаж</div>
           <div class="opt-price">+1 400 AED</div>
         </label>
-        <label class="opt-item" onclick="toggleOpt(this)">
+        <label class="opt-item" onclick="event.preventDefault();toggleOpt(this)">
           <input type="checkbox" data-price="2200"/>
           <div class="opt-cb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="opt-name" data-i18n="opt1.name">Замена сантехники</div>
           <div class="opt-price">+2 200 AED</div>
         </label>
-        <label class="opt-item" onclick="toggleOpt(this)">
+        <label class="opt-item" onclick="event.preventDefault();toggleOpt(this)">
           <input type="checkbox" data-price="1800"/>
           <div class="opt-cb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="opt-name" data-i18n="opt2.name">Электромонтаж</div>
           <div class="opt-price">+1 800 AED</div>
         </label>
-        <label class="opt-item" onclick="toggleOpt(this)">
+        <label class="opt-item" onclick="event.preventDefault();toggleOpt(this)">
           <input type="checkbox" data-price="1200"/>
           <div class="opt-cb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="opt-name" data-i18n="opt3.name">Натяжные потолки</div>
