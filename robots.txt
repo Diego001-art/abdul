@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://siberia-service.ae/sitemap.xml
+Sitemap: https://siberia-service.ae/sitemap.xml
