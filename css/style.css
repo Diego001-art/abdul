@@ -411,6 +411,23 @@ html[dir="rtl"] .titem { border-right: none; border-left: 1px solid var(--border
 .feat-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
 .feat-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
+/* ── WORK CARDS (additional services in uslugi.html) ── */
+.work-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.work-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.work-card .feat-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(217,95,43,0.1); }
+.work-card h3 { font-size: 16px; font-weight: 800; color: var(--ink); margin: 0; letter-spacing: -0.3px; }
+.work-card p { font-size: 14px; color: var(--mid); line-height: 1.65; margin: 0; flex: 1; }
+.work-card .btn { align-self: flex-start; margin-top: 4px; }
+
 /* ── FAQ ── */
 .faq-list { display: flex; flex-direction: column; }
 

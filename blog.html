@@ -2,12 +2,13 @@
 <html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Блог о ремонте квартир — советы и статьи | СтройГрупп</title>
+  <title>Блог о ремонте квартир — советы и статьи | Siberia-Service</title>
   <meta name="description" content="Полезные статьи о ремонте квартир в Москве. Советы по выбору компании, обзор этапов ремонта, цены 2024, советы по косметическому и капитальному ремонту."/>
   <meta name="keywords" content="блог ремонт квартир, советы по ремонту, статьи о ремонте, ремонт квартиры своими руками, как выбрать компанию для ремонта"/>
   <link rel="canonical" href="https://stroigrupp.ru/blog.html"/>
-  <meta property="og:title" content="Блог о ремонте квартир — советы и статьи | СтройГрупп"/>
+  <meta property="og:title" content="Блог о ремонте квартир — советы и статьи | Siberia-Service"/>
   <meta property="og:description" content="Полезные статьи и советы о ремонте квартир. Как выбрать компанию, этапы ремонта, цены, дизайн-проект."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://stroigrupp.ru/blog.html"/>
@@ -21,11 +22,11 @@
     "@graph": [
       {
         "@type": "Blog",
-        "name": "Блог СтройГрупп о ремонте квартир",
+        "name": "Блог Siberia-Service о ремонте квартир",
         "description": "Полезные статьи и советы о ремонте квартир в Москве",
         "publisher": {
           "@type": "Organization",
-          "name": "СтройГрупп",
+          "name": "Siberia-Service",
           "url": "https://stroigrupp.ru"
         },
         "url": "https://stroigrupp.ru/blog.html",
@@ -35,14 +36,14 @@
             "headline": "Как выбрать компанию для ремонта квартиры: 7 ключевых критериев",
             "url": "https://stroigrupp.ru/blog/article-1.html",
             "datePublished": "2024-10-01",
-            "author": {"@type": "Organization", "name": "СтройГрупп"}
+            "author": {"@type": "Organization", "name": "Siberia-Service"}
           },
           {
             "@type": "BlogPosting",
             "headline": "Этапы ремонта квартиры: от демонтажа до финишной отделки",
             "url": "https://stroigrupp.ru/blog/article-2.html",
             "datePublished": "2024-10-15",
-            "author": {"@type": "Organization", "name": "СтройГрупп"}
+            "author": {"@type": "Organization", "name": "Siberia-Service"}
           }
         ]
       },
@@ -61,7 +62,7 @@
 
 <header>
   <div class="hdr">
-    <a href="index.html" class="logo">Строй<em>Групп</em></a>
+    <a href="index.html" class="logo">Siberia<em>-Service</em></a>
     <nav><ul class="hdr-nav">
       <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
       <li class="nav-drop"><a href="uslugi.html" data-i18n="nav.services">Услуги</a>
@@ -96,8 +97,8 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <div class="wrap">
       <ol>
-        <li><a href="index.html">Главная</a></li>
-        <li aria-current="page">Блог</li>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li aria-current="page" data-i18n="nav.blog">Блог</li>
       </ol>
     </div>
   </nav>
@@ -106,10 +107,10 @@
   <section class="hero-dark">
     <div class="wrap">
       <div class="section-head">
-        <span class="sec-tag">Полезные материалы</span>
+        <span class="sec-tag" data-i18n="blog.tag1">Полезные материалы</span>
       </div>
-      <h1>Блог о ремонте</h1>
-      <p class="hero-sub">Практические советы, инструкции и актуальная информация о ремонте квартир в Москве. Помогаем разобраться в деталях и принять правильные решения.</p>
+      <h1 data-i18n="blog.h1">Блог о ремонте</h1>
+      <p class="hero-sub" data-i18n="blog.sub">Практические советы, инструкции и актуальная информация о ремонте квартир в Москве. Помогаем разобраться в деталях и принять правильные решения.</p>
     </div>
   </section>
 
@@ -119,11 +120,11 @@
 
       <!-- Category filter -->
       <div class="filter-tabs" role="tablist" aria-label="Фильтр по категориям">
-        <button class="ftab ftab--active" role="tab" data-cat="all" onclick="filterBlog('all')">Все статьи</button>
-        <button class="ftab" role="tab" data-cat="sovety" onclick="filterBlog('sovety')">Советы</button>
-        <button class="ftab" role="tab" data-cat="instrukcii" onclick="filterBlog('instrukcii')">Инструкции</button>
-        <button class="ftab" role="tab" data-cat="ceny" onclick="filterBlog('ceny')">Цены</button>
-        <button class="ftab" role="tab" data-cat="dizayn" onclick="filterBlog('dizayn')">Дизайн</button>
+        <button class="ftab ftab--active" role="tab" data-cat="all" onclick="filterBlog('all')" data-i18n="blog.filter.all">Все статьи</button>
+        <button class="ftab" role="tab" data-cat="sovety" onclick="filterBlog('sovety')" data-i18n="blog.filter.tips">Советы</button>
+        <button class="ftab" role="tab" data-cat="instrukcii" onclick="filterBlog('instrukcii')" data-i18n="blog.filter.guides">Инструкции</button>
+        <button class="ftab" role="tab" data-cat="ceny" onclick="filterBlog('ceny')" data-i18n="blog.filter.prices">Цены</button>
+        <button class="ftab" role="tab" data-cat="dizayn" onclick="filterBlog('dizayn')" data-i18n="blog.filter.design">Дизайн</button>
       </div>
 
       <!-- Blog grid -->
@@ -141,14 +142,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Советы</span>
-              <span class="blog-date">1 октября 2024</span>
+              <span class="blog-cat" data-i18n="blog.cat.tips">Советы</span>
+              <span class="blog-date" data-i18n="blog.a1.date">1 октября 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-1.html">Как выбрать компанию для ремонта квартиры: 7 ключевых критериев</a></h2>
-            <p class="blog-excerpt">Рассказываем, на что обращать внимание при выборе подрядчика. Договор, смета, гарантии, опыт — разбираем каждый пункт подробно.</p>
+            <h2 class="blog-title"><a href="blog/article-1.html" data-i18n="blog.a1.title">Как выбрать компанию для ремонта квартиры: 7 ключевых критериев</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a1.excerpt">Рассказываем, на что обращать внимание при выборе подрядчика. Договор, смета, гарантии, опыт — разбираем каждый пункт подробно.</p>
             <div class="blog-footer">
-              <a href="blog/article-1.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">7 мин.</span>
+              <a href="blog/article-1.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a1.time">7 мин.</span>
             </div>
           </div>
         </article>
@@ -167,14 +168,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Инструкции</span>
-              <span class="blog-date">15 октября 2024</span>
+              <span class="blog-cat" data-i18n="blog.cat.guides">Инструкции</span>
+              <span class="blog-date" data-i18n="blog.a2.date">15 октября 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-2.html">Этапы ремонта квартиры: от демонтажа до финишной отделки</a></h2>
-            <p class="blog-excerpt">Полное руководство по этапам капитального ремонта. Что делается сначала, почему важен порядок работ и как контролировать подрядчика.</p>
+            <h2 class="blog-title"><a href="blog/article-2.html" data-i18n="blog.a2.title">Этапы ремонта квартиры: от демонтажа до финишной отделки</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a2.excerpt">Полное руководство по этапам капитального ремонта. Что делается сначала, почему важен порядок работ и как контролировать подрядчика.</p>
             <div class="blog-footer">
-              <a href="blog/article-2.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">10 мин.</span>
+              <a href="blog/article-2.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a2.time">10 мин.</span>
             </div>
           </div>
         </article>
@@ -189,14 +190,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Цены</span>
-              <span class="blog-date">1 ноября 2024</span>
+              <span class="blog-cat" data-i18n="blog.filter.prices">Цены</span>
+              <span class="blog-date" data-i18n="blog.a3.date">1 ноября 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-3.html">Сколько стоит ремонт квартиры в Москве в 2024 году</a></h2>
-            <p class="blog-excerpt">Актуальные цены на все виды ремонта. Из чего складывается стоимость, как сэкономить без потери качества и на чём экономить не стоит.</p>
+            <h2 class="blog-title"><a href="blog/article-3.html" data-i18n="blog.a3.title">Сколько стоит ремонт квартиры в Москве в 2024 году</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a3.excerpt">Актуальные цены на все виды ремонта. Из чего складывается стоимость, как сэкономить без потери качества и на чём экономить не стоит.</p>
             <div class="blog-footer">
-              <a href="blog/article-3.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">8 мин.</span>
+              <a href="blog/article-3.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a3.time">8 мин.</span>
             </div>
           </div>
         </article>
@@ -212,14 +213,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Советы</span>
-              <span class="blog-date">15 ноября 2024</span>
+              <span class="blog-cat" data-i18n="blog.cat.tips">Советы</span>
+              <span class="blog-date" data-i18n="blog.a4.date">15 ноября 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-4.html">Косметический или капитальный ремонт: как сделать выбор</a></h2>
-            <p class="blog-excerpt">Подробное сравнение двух форматов. Когда достаточно косметики, а когда без капиталки не обойтись — объясняем на конкретных примерах.</p>
+            <h2 class="blog-title"><a href="blog/article-4.html" data-i18n="blog.a4.title">Косметический или капитальный ремонт: как сделать выбор</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a4.excerpt">Подробное сравнение двух форматов. Когда достаточно косметики, а когда без капиталки не обойтись — объясняем на конкретных примерах.</p>
             <div class="blog-footer">
-              <a href="blog/article-4.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">6 мин.</span>
+              <a href="blog/article-4.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a4.time">6 мин.</span>
             </div>
           </div>
         </article>
@@ -234,14 +235,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Ремонт ванной</span>
-              <span class="blog-date">1 декабря 2024</span>
+              <span class="blog-cat" data-i18n="blog.cat.bathroom">Ремонт ванной</span>
+              <span class="blog-date" data-i18n="blog.a5.date">1 декабря 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-5.html">Ремонт ванной комнаты под ключ: что важно знать</a></h2>
-            <p class="blog-excerpt">Всё о ремонте ванной: гидроизоляция, выбор плитки, замена сантехники, вентиляция. Типичные ошибки и как их избежать.</p>
+            <h2 class="blog-title"><a href="blog/article-5.html" data-i18n="blog.a5.title">Ремонт ванной комнаты под ключ: что важно знать</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a5.excerpt">Всё о ремонте ванной: гидроизоляция, выбор плитки, замена сантехники, вентиляция. Типичные ошибки и как их избежать.</p>
             <div class="blog-footer">
-              <a href="blog/article-5.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">9 мин.</span>
+              <a href="blog/article-5.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a5.time">9 мин.</span>
             </div>
           </div>
         </article>
@@ -256,14 +257,14 @@
           </div>
           <div class="blog-card-body">
             <div class="blog-meta">
-              <span class="blog-cat">Дизайн</span>
-              <span class="blog-date">15 декабря 2024</span>
+              <span class="blog-cat" data-i18n="blog.filter.design">Дизайн</span>
+              <span class="blog-date" data-i18n="blog.a6.date">15 декабря 2024</span>
             </div>
-            <h2 class="blog-title"><a href="blog/article-6.html">Дизайн-проект квартиры: нужен ли он и сколько стоит</a></h2>
-            <p class="blog-excerpt">Разбираем, зачем нужен дизайн-проект, что в него входит, сколько стоит и когда без него можно обойтись. Мнение практикующих дизайнеров.</p>
+            <h2 class="blog-title"><a href="blog/article-6.html" data-i18n="blog.a6.title">Дизайн-проект квартиры: нужен ли он и сколько стоит</a></h2>
+            <p class="blog-excerpt" data-i18n="blog.a6.excerpt">Разбираем, зачем нужен дизайн-проект, что в него входит, сколько стоит и когда без него можно обойтись. Мнение практикующих дизайнеров.</p>
             <div class="blog-footer">
-              <a href="blog/article-6.html" class="btn btn-accent btn--sm">Читать статью</a>
-              <span class="read-time">7 мин.</span>
+              <a href="blog/article-6.html" class="btn btn-accent btn--sm" data-i18n="blog.btn.read">Читать статью</a>
+              <span class="read-time" data-i18n="blog.a6.time">7 мин.</span>
             </div>
           </div>
         </article>
@@ -276,24 +277,24 @@
   <section class="section section--light">
     <div class="wrap">
       <div class="section-head">
-        <span class="sec-tag">Полезные ссылки</span>
-        <h2>Полезные разделы сайта</h2>
+        <span class="sec-tag" data-i18n="blog.links.tag">Полезные ссылки</span>
+        <h2 data-i18n="blog.links.h2">Полезные разделы сайта</h2>
       </div>
       <div class="features-grid grid-3">
         <div class="feat-item feat-item--bordered">
-          <h3>Услуги</h3>
-          <p>Полный перечень видов ремонта квартир. Что входит в каждый вид и как выбрать подходящий.</p>
-          <a href="uslugi.html" class="btn btn-dark btn--sm">Перейти</a>
+          <h3 data-i18n="blog.links.svc.h">Услуги</h3>
+          <p data-i18n="blog.links.svc.p">Полный перечень видов ремонта квартир. Что входит в каждый вид и как выбрать подходящий.</p>
+          <a href="uslugi.html" class="btn btn-dark btn--sm" data-i18n="blog.links.btn">Перейти</a>
         </div>
         <div class="feat-item feat-item--bordered">
-          <h3>Цены</h3>
-          <p>Прайс-лист на все виды ремонта. Стоимость по типам квартир и отдельных видов работ.</p>
-          <a href="prices.html" class="btn btn-dark btn--sm">Перейти</a>
+          <h3 data-i18n="blog.links.prices.h">Цены</h3>
+          <p data-i18n="blog.links.prices.p">Прайс-лист на все виды ремонта. Стоимость по типам квартир и отдельных видов работ.</p>
+          <a href="prices.html" class="btn btn-dark btn--sm" data-i18n="blog.links.btn">Перейти</a>
         </div>
         <div class="feat-item feat-item--bordered">
-          <h3>Портфолио</h3>
-          <p>850+ реализованных проектов ремонта квартир в Москве. Примеры до и после.</p>
-          <a href="portfolio.html" class="btn btn-dark btn--sm">Перейти</a>
+          <h3 data-i18n="blog.links.port.h">Портфолио</h3>
+          <p data-i18n="blog.links.port.p">850+ реализованных проектов ремонта квартир в Москве. Примеры до и после.</p>
+          <a href="portfolio.html" class="btn btn-dark btn--sm" data-i18n="blog.links.btn">Перейти</a>
         </div>
       </div>
     </div>
@@ -304,8 +305,8 @@
     <div class="wrap">
       <div class="tg-block">
         <div class="tg-block-text">
-          <h2>Готовы к ремонту?</h2>
-          <p>Прочитали достаточно — пора действовать. Напишите нам в Telegram, получите бесплатную консультацию и смету для вашей квартиры.</p>
+          <h2 data-i18n="blog.cta.h2">Готовы к ремонту?</h2>
+          <p data-i18n="blog.cta.p">Прочитали достаточно — пора действовать. Напишите нам в Telegram, получите бесплатную консультацию и смету для вашей квартиры.</p>
         </div>
         <a href="https://t.me/+971589552882" class="btn btn-tg btn--lg" target="_blank" rel="noopener">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -320,7 +321,7 @@
 <footer>
   <div class="footer-main">
     <div>
-      <a href="index.html" class="footer-logo">Строй<em>Групп</em></a>
+      <a href="index.html" class="footer-logo">Siberia<em>-Service</em></a>
       <p class="footer-desc mt-16" data-i18n="footer.desc">Профессиональный ремонт квартир в Москве с 2012 года. Гарантия 3 года.</p>
     </div>
     <div class="footer-col">
@@ -350,7 +351,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span data-i18n="footer.copy">© 2024 СтройГрупп. Все права защищены.</span>
+    <span data-i18n="footer.copy">© 2024 Siberia-Service. Все права защищены.</span>
     <a href="#" data-i18n="footer.policy">Политика конфиденциальности</a>
   </div>
 </footer>

@@ -2,12 +2,13 @@
 <html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Портфолио — наши работы по ремонту квартир | СтройГрупп</title>
+  <title>Портфолио — наши работы по ремонту квартир | Siberia-Service</title>
   <meta name="description" content="Портфолио реализованных проектов ремонта квартир в Москве. Косметический, капитальный и дизайнерский ремонт. 850+ завершённых проектов. Смотрите наши работы."/>
   <meta name="keywords" content="портфолио ремонт квартир, работы по ремонту, примеры ремонта, фото ремонта квартир Москва, ремонт до и после"/>
   <link rel="canonical" href="https://stroigrupp.ru/portfolio.html"/>
-  <meta property="og:title" content="Портфолио — наши работы по ремонту квартир | СтройГрупп"/>
+  <meta property="og:title" content="Портфолио — наши работы по ремонту квартир | Siberia-Service"/>
   <meta property="og:description" content="850+ реализованных проектов ремонта квартир в Москве. Косметический, капитальный и дизайнерский ремонт."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://stroigrupp.ru/portfolio.html"/>
@@ -25,7 +26,7 @@
         "description": "850+ реализованных проектов ремонта квартир в Москве. Косметический, капитальный и дизайнерский ремонт.",
         "provider": {
           "@type": "LocalBusiness",
-          "name": "СтройГрупп",
+          "name": "Siberia-Service",
           "url": "https://stroigrupp.ru",
           "sameAs": "https://t.me/+971589552882"
         },
@@ -46,7 +47,7 @@
 
 <header>
   <div class="hdr">
-    <a href="index.html" class="logo">Строй<em>Групп</em></a>
+    <a href="index.html" class="logo">Siberia<em>-Service</em></a>
     <nav><ul class="hdr-nav">
       <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
       <li class="nav-drop"><a href="uslugi.html" data-i18n="nav.services">Услуги</a>
@@ -81,8 +82,8 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <div class="wrap">
       <ol>
-        <li><a href="index.html">Главная</a></li>
-        <li aria-current="page">Портфолио</li>
+        <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+        <li aria-current="page" data-i18n="nav.portfolio">Портфолио</li>
       </ol>
     </div>
   </nav>
@@ -91,26 +92,26 @@
   <section class="hero-dark">
     <div class="wrap">
       <div class="section-head">
-        <span class="sec-tag">Наши проекты</span>
+        <span class="sec-tag" data-i18n="portfolio.tag1">Наши проекты</span>
       </div>
-      <h1>Наши работы</h1>
-      <p class="hero-sub">Реальные проекты, реальные клиенты. Более 850 завершённых ремонтов квартир в Москве за 12 лет работы.</p>
+      <h1 data-i18n="portfolio.h1">Наши работы</h1>
+      <p class="hero-sub" data-i18n="portfolio.sub">Реальные проекты, реальные клиенты. Более 850 завершённых ремонтов квартир в Москве за 12 лет работы.</p>
       <div class="stat-row">
         <div class="stat-item">
           <strong>850+</strong>
-          <span>проектов</span>
+          <span data-i18n="portfolio.stat1">проектов</span>
         </div>
         <div class="stat-item">
           <strong>12 лет</strong>
-          <span>на рынке</span>
+          <span data-i18n="portfolio.stat2">на рынке</span>
         </div>
         <div class="stat-item">
           <strong>97%</strong>
-          <span>довольных клиентов</span>
+          <span data-i18n="portfolio.stat3">довольных клиентов</span>
         </div>
         <div class="stat-item">
           <strong>3 года</strong>
-          <span>гарантия</span>
+          <span data-i18n="portfolio.stat4">гарантия</span>
         </div>
       </div>
     </div>
@@ -122,10 +123,10 @@
 
       <!-- Filter tabs -->
       <div class="filter-tabs" role="tablist" aria-label="Фильтр по типу ремонта">
-        <button class="ftab ftab--active" role="tab" aria-selected="true" data-filter="all" onclick="filterPortfolio('all')">Все</button>
-        <button class="ftab" role="tab" aria-selected="false" data-filter="cosmetic" onclick="filterPortfolio('cosmetic')">Косметический</button>
-        <button class="ftab" role="tab" aria-selected="false" data-filter="capital" onclick="filterPortfolio('capital')">Капитальный</button>
-        <button class="ftab" role="tab" aria-selected="false" data-filter="design" onclick="filterPortfolio('design')">Дизайнерский</button>
+        <button class="ftab ftab--active" role="tab" aria-selected="true" data-filter="all" onclick="filterPortfolio('all')" data-i18n="portfolio.filter.all">Все</button>
+        <button class="ftab" role="tab" aria-selected="false" data-filter="cosmetic" onclick="filterPortfolio('cosmetic')" data-i18n="portfolio.filter.cosmetic">Косметический</button>
+        <button class="ftab" role="tab" aria-selected="false" data-filter="capital" onclick="filterPortfolio('capital')" data-i18n="portfolio.filter.capital">Капитальный</button>
+        <button class="ftab" role="tab" aria-selected="false" data-filter="design" onclick="filterPortfolio('design')" data-i18n="portfolio.filter.design">Дизайнерский</button>
       </div>
 
       <!-- Portfolio grid -->
@@ -140,13 +141,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Дизайнерский</span>
-            <h3>Студия 32 м², Хамовники</h3>
-            <p>Японский минимализм с использованием натурального дерева и тёмного бетона. Скрытое освещение по периметру.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.design">Дизайнерский</span>
+            <h3 data-i18n="portfolio.p1.h3">Студия 32 м², Хамовники</h3>
+            <p data-i18n="portfolio.p1.p">Японский минимализм с использованием натурального дерева и тёмного бетона. Скрытое освещение по периметру.</p>
             <div class="portfolio-meta">
               <span>32 м²</span>
-              <span>Хамовники, ЦАО</span>
-              <span>4 месяца</span>
+              <span data-i18n="portfolio.p1.loc">Хамовники, ЦАО</span>
+              <span data-i18n="portfolio.p1.dur">4 месяца</span>
             </div>
           </div>
         </article>
@@ -161,13 +162,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Капитальный</span>
-            <h3>2к квартира 64 м², Арбат</h3>
-            <p>Полный капитальный ремонт с перепланировкой. Объединение кухни и гостиной, новая электрика и сантехника.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.capital">Капитальный</span>
+            <h3 data-i18n="portfolio.p2.h3">2к квартира 64 м², Арбат</h3>
+            <p data-i18n="portfolio.p2.p">Полный капитальный ремонт с перепланировкой. Объединение кухни и гостиной, новая электрика и сантехника.</p>
             <div class="portfolio-meta">
               <span>64 м²</span>
-              <span>Арбат, ЦАО</span>
-              <span>10 недель</span>
+              <span data-i18n="portfolio.p2.loc">Арбат, ЦАО</span>
+              <span data-i18n="portfolio.p2.dur">10 недель</span>
             </div>
           </div>
         </article>
@@ -180,13 +181,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Дизайнерский</span>
-            <h3>3к квартира 98 м², Пресня</h3>
-            <p>Арт-деко с латунными деталями, мраморными поверхностями и бархатной мебелью. Авторский надзор дизайнера.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.design">Дизайнерский</span>
+            <h3 data-i18n="portfolio.p3.h3">3к квартира 98 м², Пресня</h3>
+            <p data-i18n="portfolio.p3.p">Арт-деко с латунными деталями, мраморными поверхностями и бархатной мебелью. Авторский надзор дизайнера.</p>
             <div class="portfolio-meta">
               <span>98 м²</span>
-              <span>Пресня, ЦАО</span>
-              <span>5 месяцев</span>
+              <span data-i18n="portfolio.p3.loc">Пресня, ЦАО</span>
+              <span data-i18n="portfolio.p3.dur">5 месяцев</span>
             </div>
           </div>
         </article>
@@ -200,13 +201,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Косметический</span>
-            <h3>1к квартира 42 м², Митино</h3>
-            <p>Обновление квартиры после аренды. Новые обои, ламинат, натяжные потолки. Срок выполнения — 18 дней.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.cosmetic">Косметический</span>
+            <h3 data-i18n="portfolio.p4.h3">1к квартира 42 м², Митино</h3>
+            <p data-i18n="portfolio.p4.p">Обновление квартиры после аренды. Новые обои, ламинат, натяжные потолки. Срок выполнения — 18 дней.</p>
             <div class="portfolio-meta">
               <span>42 м²</span>
-              <span>Митино, СЗАО</span>
-              <span>18 дней</span>
+              <span data-i18n="portfolio.p4.loc">Митино, СЗАО</span>
+              <span data-i18n="portfolio.p4.dur">18 дней</span>
             </div>
           </div>
         </article>
@@ -219,13 +220,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Капитальный</span>
-            <h3>3к квартира 84 м², Тушино</h3>
-            <p>Капитальный ремонт в панельном доме 1985 года. Полная замена коммуникаций, стяжка, штукатурка, отделка.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.capital">Капитальный</span>
+            <h3 data-i18n="portfolio.p5.h3">3к квартира 84 м², Тушино</h3>
+            <p data-i18n="portfolio.p5.p">Капитальный ремонт в панельном доме 1985 года. Полная замена коммуникаций, стяжка, штукатурка, отделка.</p>
             <div class="portfolio-meta">
               <span>84 м²</span>
-              <span>Тушино, СЗАО</span>
-              <span>14 недель</span>
+              <span data-i18n="portfolio.p5.loc">Тушино, СЗАО</span>
+              <span data-i18n="portfolio.p5.dur">14 недель</span>
             </div>
           </div>
         </article>
@@ -239,13 +240,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Косметический</span>
-            <h3>2к квартира 56 м², Измайлово</h3>
-            <p>Косметический ремонт с заменой напольного покрытия и обновлением ванной комнаты. Светлая, современная отделка.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.cosmetic">Косметический</span>
+            <h3 data-i18n="portfolio.p6.h3">2к квартира 56 м², Измайлово</h3>
+            <p data-i18n="portfolio.p6.p">Косметический ремонт с заменой напольного покрытия и обновлением ванной комнаты. Светлая, современная отделка.</p>
             <div class="portfolio-meta">
               <span>56 м²</span>
-              <span>Измайлово, ВАО</span>
-              <span>3 недели</span>
+              <span data-i18n="portfolio.p6.loc">Измайлово, ВАО</span>
+              <span data-i18n="portfolio.p6.dur">3 недели</span>
             </div>
           </div>
         </article>
@@ -259,13 +260,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Дизайнерский</span>
-            <h3>Студия-лофт 55 м², Басманный</h3>
-            <p>Лофт с открытыми балками, кирпичной кладкой и панорамными окнами. Встроенная кухня с барной стойкой.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.design">Дизайнерский</span>
+            <h3 data-i18n="portfolio.p7.h3">Студия-лофт 55 м², Басманный</h3>
+            <p data-i18n="portfolio.p7.p">Лофт с открытыми балками, кирпичной кладкой и панорамными окнами. Встроенная кухня с барной стойкой.</p>
             <div class="portfolio-meta">
               <span>55 м²</span>
-              <span>Басманный, ЦАО</span>
-              <span>4,5 месяца</span>
+              <span data-i18n="portfolio.p7.loc">Басманный, ЦАО</span>
+              <span data-i18n="portfolio.p7.dur">4,5 месяца</span>
             </div>
           </div>
         </article>
@@ -279,13 +280,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Капитальный</span>
-            <h3>1к квартира 38 м², Строгино</h3>
-            <p>Капитальный ремонт в новостройке без отделки. Стяжка, штукатурка, электрика, отделка под ключ за 8 недель.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.capital">Капитальный</span>
+            <h3 data-i18n="portfolio.p8.h3">1к квартира 38 м², Строгино</h3>
+            <p data-i18n="portfolio.p8.p">Капитальный ремонт в новостройке без отделки. Стяжка, штукатурка, электрика, отделка под ключ за 8 недель.</p>
             <div class="portfolio-meta">
               <span>38 м²</span>
-              <span>Строгино, СЗАО</span>
-              <span>8 недель</span>
+              <span data-i18n="portfolio.p8.loc">Строгино, СЗАО</span>
+              <span data-i18n="portfolio.p8.dur">8 недель</span>
             </div>
           </div>
         </article>
@@ -298,13 +299,13 @@
             </svg>
           </div>
           <div class="portfolio-info">
-            <span class="label-badge">Косметический</span>
-            <h3>2к квартира 62 м², Марьино</h3>
-            <p>Обновление квартиры перед продажей. Декоративная штукатурка, новые натяжные потолки, замена дверей.</p>
+            <span class="label-badge" data-i18n="portfolio.badge.cosmetic">Косметический</span>
+            <h3 data-i18n="portfolio.p9.h3">2к квартира 62 м², Марьино</h3>
+            <p data-i18n="portfolio.p9.p">Обновление квартиры перед продажей. Декоративная штукатурка, новые натяжные потолки, замена дверей.</p>
             <div class="portfolio-meta">
               <span>62 м²</span>
-              <span>Марьино, ЮВАО</span>
-              <span>3 недели</span>
+              <span data-i18n="portfolio.p9.loc">Марьино, ЮВАО</span>
+              <span data-i18n="portfolio.p9.dur">3 недели</span>
             </div>
           </div>
         </article>
@@ -317,30 +318,30 @@
   <section class="section section--light">
     <div class="wrap">
       <div class="section-head">
-        <span class="sec-tag">В цифрах</span>
-        <h2>СтройГрупп в цифрах</h2>
+        <span class="sec-tag" data-i18n="portfolio.nums.tag">В цифрах</span>
+        <h2 data-i18n="portfolio.nums.h2">Siberia-Service в цифрах</h2>
       </div>
       <div class="trust-bar">
         <div class="trust-bar-inner">
           <div class="titem">
             <div class="titem-num">850+</div>
-            <div class="titem-label">завершённых проектов</div>
+            <div class="titem-label" data-i18n="portfolio.nums.l1">завершённых проектов</div>
           </div>
           <div class="titem">
             <div class="titem-num">12</div>
-            <div class="titem-label">лет на рынке</div>
+            <div class="titem-label" data-i18n="portfolio.nums.l2">лет на рынке</div>
           </div>
           <div class="titem">
             <div class="titem-num">97%</div>
-            <div class="titem-label">клиентов рекомендуют нас</div>
+            <div class="titem-label" data-i18n="portfolio.nums.l3">клиентов рекомендуют нас</div>
           </div>
           <div class="titem">
             <div class="titem-num">3 года</div>
-            <div class="titem-label">гарантия на все работы</div>
+            <div class="titem-label" data-i18n="portfolio.nums.l4">гарантия на все работы</div>
           </div>
           <div class="titem">
             <div class="titem-num">48 ч</div>
-            <div class="titem-label">от звонка до начала работ</div>
+            <div class="titem-label" data-i18n="portfolio.nums.l5">от звонка до начала работ</div>
           </div>
         </div>
       </div>
@@ -352,8 +353,8 @@
     <div class="wrap">
       <div class="tg-block">
         <div class="tg-block-text">
-          <h2>Хотите так же?</h2>
-          <p>Напишите нам в Telegram — обсудим ваш проект, рассчитаем стоимость и покажем похожие работы из нашего портфолио.</p>
+          <h2 data-i18n="portfolio.cta.h2">Хотите так же?</h2>
+          <p data-i18n="portfolio.cta.p">Напишите нам в Telegram — обсудим ваш проект, рассчитаем стоимость и покажем похожие работы из нашего портфолио.</p>
         </div>
         <a href="https://t.me/+971589552882" class="btn btn-tg btn--lg" target="_blank" rel="noopener">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
@@ -368,7 +369,7 @@
 <footer>
   <div class="footer-main">
     <div>
-      <a href="index.html" class="footer-logo">Строй<em>Групп</em></a>
+      <a href="index.html" class="footer-logo">Siberia<em>-Service</em></a>
       <p class="footer-desc mt-16" data-i18n="footer.desc">Профессиональный ремонт квартир в Москве с 2012 года. Гарантия 3 года.</p>
     </div>
     <div class="footer-col">
@@ -398,7 +399,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span data-i18n="footer.copy">© 2024 СтройГрупп. Все права защищены.</span>
+    <span data-i18n="footer.copy">© 2024 Siberia-Service. Все права защищены.</span>
     <a href="#" data-i18n="footer.policy">Политика конфиденциальности</a>
   </div>
 </footer>
