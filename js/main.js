@@ -2148,18 +2148,11 @@ function initHeroScroll() {
   const hero = document.querySelector('.hero-home');
   if (!hero) return;
 
-  const textCol = hero.querySelector('.hero-inner > div:first-child');
-  const statsCol = hero.querySelector('.hero-stats-col');
-  if (!textCol || !statsCol) return;
-
-  // Set initial 3D perspective on parent
   const heroInner = hero.querySelector('.hero-inner');
-  heroInner.style.perspective = '1200px';
-  heroInner.style.perspectiveOrigin = '50% 50%';
+  if (!heroInner) return;
 
-  statsCol.style.willChange = 'transform';
-  textCol.style.willChange = 'transform';
-  statsCol.style.transformOrigin = 'center top';
+  // perspective is set on .hero-home via CSS
+  heroInner.style.transformOrigin = 'center top';
 
   let ticking = false;
 
@@ -2168,14 +2161,12 @@ function initHeroScroll() {
     const progress = Math.min(Math.max(window.scrollY / heroH, 0), 1);
 
     const isMobile = window.innerWidth <= 768;
-    const [s0, s1] = isMobile ? [0.7, 0.9] : [1.05, 1];
+    const [s0, s1] = isMobile ? [0.85, 1] : [1.05, 1];
 
-    const rotate = 20 * (1 - progress);          // 20 → 0
-    const scale  = s0 + (s1 - s0) * progress;    // 1.05 → 1
-    const ty     = -100 * progress;              // 0 → -100px
+    const rotate = 18 * (1 - progress);       // 18° → 0°
+    const scale  = s0 + (s1 - s0) * progress; // 1.05 → 1
 
-    statsCol.style.transform = `rotateX(${rotate}deg) scale(${scale})`;
-    textCol.style.transform  = `translateY(${ty}px)`;
+    heroInner.style.transform = `rotateX(${rotate}deg) scale(${scale})`;
 
     ticking = false;
   }
