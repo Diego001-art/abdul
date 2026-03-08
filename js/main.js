@@ -2143,41 +2143,6 @@ function initForms() {
   });
 }
 
-/* ── HERO SCROLL ANIMATION (ContainerScroll effect) ── */
-function initHeroScroll() {
-  const hero = document.querySelector('.hero-home');
-  if (!hero) return;
-
-  const heroInner = hero.querySelector('.hero-inner');
-  if (!heroInner) return;
-
-  // perspective is set on .hero-home via CSS
-  heroInner.style.transformOrigin = 'center top';
-
-  let ticking = false;
-
-  function update() {
-    const heroH = hero.offsetHeight;
-    const progress = Math.min(Math.max(window.scrollY / heroH, 0), 1);
-
-    const isMobile = window.innerWidth <= 768;
-    const [s0, s1] = isMobile ? [0.85, 1] : [1.05, 1];
-
-    const rotate = 18 * (1 - progress);       // 18° → 0°
-    const scale  = s0 + (s1 - s0) * progress; // 1.05 → 1
-
-    heroInner.style.transform = `rotateX(${rotate}deg) scale(${scale})`;
-
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-
-  update(); // apply on load
-}
-
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
   initLang();
@@ -2187,5 +2152,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initPhone();
   initForms();
-  initHeroScroll();
 });
