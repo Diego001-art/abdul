@@ -503,6 +503,25 @@ html[dir="rtl"] .titem { border-right: none; border-left: 1px solid var(--border
 .card-text { font-size: 13px; color: var(--muted); line-height: 1.5; flex: 1; }
 .card-meta { font-size: 12px; color: var(--muted); margin-top: 14px; display: flex; justify-content: space-between; }
 
+/* ── BLOG CARDS ── */
+.blog-card-img { min-height: 180px; overflow: hidden; }
+
+.blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+.blog-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.blog-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); }
+.blog-date { font-size: 11px; color: var(--muted); }
+
+.blog-title { font-size: 16px; font-weight: 700; line-height: 1.35; margin: 0 0 10px; letter-spacing: -0.3px; }
+.blog-title a { color: var(--ink); text-decoration: none; }
+.blog-title a:hover { color: var(--accent); }
+
+.blog-excerpt { font-size: 13px; color: var(--muted); line-height: 1.55; flex: 1; margin: 0; }
+
+.blog-footer { margin-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+.blog-read-more { font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.blog-read-more:hover { color: var(--accent2); }
+
 /* ── PORTFOLIO ITEM ── */
 .pcard { border-radius: var(--radius); overflow: hidden; position: relative; cursor: pointer; }
 .pcard-img { aspect-ratio: 4/3; background: var(--light); display: flex; align-items: center; justify-content: center; }
