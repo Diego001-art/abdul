@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Обслуживание кондиционеров в Дубае — чистка, заправка, ремонт | Siberia-Service</title>
+  <meta name="description" content="Обслуживание кондиционеров в Дубае: чистка, заправка фреона, диагностика, монтаж и ремонт. Выезд в день обращения. Работаем по всему Дубаю. Гарантия."/>
+  <meta name="keywords" content="обслуживание кондиционеров Дубай, чистка кондиционера Дубай, заправка фреона Дубай, ремонт кондиционера Dubai, монтаж кондиционера ОАЭ, AC service Dubai, AC cleaning Dubai"/>
+  <link rel="canonical" href="https://siberia-service.ae/kondicionery.html"/>
+  <meta property="og:title" content="Обслуживание кондиционеров в Дубае | Siberia-Service"/>
+  <meta property="og:description" content="Чистка, заправка фреона, диагностика и ремонт кондиционеров в Дубае. Выезд в день обращения."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://siberia-service.ae/kondicionery.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/></noscript>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* AC Calculator */
+    .ac-calc { background: var(--light); padding: 88px 0; }
+    .ac-calc-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+    .ac-step { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .ac-step:last-of-type { border-bottom: none; }
+    .ac-step-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+    .ac-step-n { font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; min-width: 44px; }
+    .ac-step-name { font-size: 16px; font-weight: 700; color: var(--ink); }
+    .ac-step-val { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: rgba(217,95,43,0.08); padding: 4px 12px; border-radius: 100px; }
+
+    /* AC type cards */
+    .ac-type-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    @media (max-width: 600px) { .ac-type-cards { grid-template-columns: 1fr; } }
+    .ac-tcard { border: 2px solid var(--border); border-radius: 8px; padding: 20px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .ac-tcard:hover { border-color: var(--accent); background: #fdf5f0; }
+    .ac-tcard.selected { border-color: var(--accent); background: #fdf5f0; }
+    .ac-tcard input { display: none; }
+    .ac-tcard-icon { font-size: 28px; margin-bottom: 10px; }
+    .ac-tcard-name { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .ac-tcard-sub { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .ac-tcard-mult { font-size: 11px; font-weight: 700; color: var(--accent); margin-top: 8px; background: rgba(217,95,43,0.1); display: inline-block; padding: 2px 8px; border-radius: 100px; }
+
+    /* Quantity slider */
+    .qty-widget { display: flex; align-items: center; gap: 20px; }
+    .qty-btn { width: 40px; height: 40px; border: 2px solid var(--border); border-radius: 8px; background: #fff; font-size: 20px; font-weight: 700; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.15s; }
+    .qty-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .qty-display { min-width: 60px; text-align: center; }
+    .qty-num { font-size: 36px; font-weight: 900; color: var(--ink); line-height: 1; }
+    .qty-label { font-size: 12px; color: var(--muted); }
+
+    /* Services options */
+    .ac-options { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .ac-opt { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: #fff; cursor: pointer; user-select: none; transition: background 0.15s; border-bottom: 1px solid var(--border); }
+    .ac-opt:last-child { border-bottom: none; }
+    .ac-opt:hover { background: var(--light); }
+    .ac-opt.checked { background: #fdf5f0; border-left: 3px solid var(--accent); }
+    .ac-opt input { display: none; }
+    .ac-opt-cb { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s; position: relative; }
+    .ac-opt.checked .ac-opt-cb { border-color: var(--accent); }
+    .ac-opt.checked .ac-opt-cb::after { content: ''; position: absolute; width: 10px; height: 10px; background: var(--accent); border-radius: 2px; }
+    .ac-opt-info { flex: 1; }
+    .ac-opt-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .ac-opt-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .ac-opt-price { font-size: 13px; font-weight: 700; color: var(--accent); background: rgba(217,95,43,0.08); padding: 4px 12px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+
+    /* Result */
+    .ac-result { background: var(--ink); border-radius: 12px; padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 8px; }
+    .ac-result-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .ac-result-amount { font-size: 42px; font-weight: 900; color: #fff; letter-spacing: -2px; line-height: 1; }
+    .ac-result-hint { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 8px; }
+    .ac-result-breakdown { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+    .ac-result-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+    @media (max-width: 600px) { .ac-result { flex-direction: column; } .ac-result-actions { align-items: stretch; width: 100%; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Обслуживание кондиционеров в Дубае",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Siberia-Service",
+          "url": "https://siberia-service.ae",
+          "areaServed": "Дубай, ОАЭ"
+        },
+        "serviceType": "Обслуживание кондиционеров",
+        "description": "Чистка, заправка фреона, диагностика, монтаж и ремонт кондиционеров в Дубае. Выезд в день обращения.",
+        "url": "https://siberia-service.ae/kondicionery.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как часто нужно чистить кондиционер в Дубае?",
+            "acceptedAnswer": {"@type": "Answer", "text": "В условиях Дубая рекомендуется чистить кондиционер каждые 3–4 месяца. Из-за песка и пыли фильтры засоряются значительно быстрее, чем в умеренном климате."}
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько стоит чистка кондиционера в Дубае?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Чистка внутреннего блока сплит-системы стоит от 150 AED. Очистка наружного блока — от 120 AED. Полное обслуживание с заправкой фреона — от 450 AED за одну сплит-систему."}
+          },
+          {
+            "@type": "Question",
+            "name": "Как понять что кондиционеру нужна заправка фреона?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Признаки низкого фреона: кондиционер работает, но плохо охлаждает; появляется иней или лёд на трубках; агрегат потребляет больше электроэнергии. Точно определить только диагностикой."}
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько времени занимает обслуживание кондиционера?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Стандартная чистка одного блока — 40–60 минут. Полное обслуживание с заправкой — 1.5–2 часа. Монтаж нового кондиционера — 3–5 часов в зависимости от сложности."}
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://siberia-service.ae/"},
+          {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://siberia-service.ae/uslugi.html"},
+          {"@type": "ListItem", "position": 3, "name": "Обслуживание кондиционеров", "item": "https://siberia-service.ae/kondicionery.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107188397', 'ym');
+    ym(107188397, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/107188397" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <a href="index.html" class="logo">Siberia<em>-Service</em></a>
+    <nav><ul class="hdr-nav">
+      <li><a href="index.html" data-i18n="nav.home">Главная</a></li>
+      <li class="nav-drop"><a href="uslugi.html" data-i18n="nav.services">Услуги</a>
+        <ul class="drop-menu">
+          <li><a href="kosmeticheskiy-remont.html" data-i18n="nav.cosmetic">Косметический ремонт</a></li>
+          <li><a href="kapitalnyy-remont.html" data-i18n="nav.capital">Капитальный ремонт</a></li>
+          <li><a href="dizaynersky-remont.html" data-i18n="nav.design">Дизайнерский ремонт</a></li>
+          <li><a href="kondicionery.html" data-i18n="nav.ac">Кондиционеры</a></li>
+        </ul>
+      </li>
+      <li><a href="prices.html" data-i18n="nav.prices">Цены</a></li>
+      <li><a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a></li>
+      <li><a href="blog.html" data-i18n="nav.blog">Блог</a></li>
+      <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
+    </ul></nav>
+    <div class="hdr-right">
+      <div class="lang-sw">
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')"><span class="lang-flag">🇷🇺</span><span class="lang-code"> RU</span></button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')"><span class="lang-flag">🇬🇧</span><span class="lang-code"> EN</span></button>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')"><span class="lang-flag">🇸🇦</span><span class="lang-code"> AR</span></button>
+      </div>
+      <a href="https://t.me/+971589552882" class="hdr-tg" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span data-i18n="hdr.tg">Написать</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="wrap">
+      <ol>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="uslugi.html">Услуги</a></li>
+        <li aria-current="page">Кондиционеры</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-dark" style="background-image: linear-gradient(rgba(10,10,20,0.65), rgba(10,10,20,0.75)), url('kondi.webp'); background-size: cover; background-position: center;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag">Выезд в день обращения</span>
+      </div>
+      <h1>Обслуживание кондиционеров в Дубае</h1>
+      <p class="hero-sub">Чистка, заправка фреона, диагностика, монтаж и ремонт кондиционеров. Русскоязычные мастера. Работаем по всему Дубаю — выезд от 2 часов.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <strong>от 150 AED</strong>
+          <span>чистка блока</span>
+        </div>
+        <div class="stat-item">
+          <strong>2 часа</strong>
+          <span>выезд мастера</span>
+        </div>
+        <div class="stat-item">
+          <strong>6 мес.</strong>
+          <span>гарантия на работы</span>
+        </div>
+        <div class="stat-item">
+          <strong>0 AED</strong>
+          <span>диагностика при заказе</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="https://t.me/+971589552882" class="btn btn-tg btn--lg" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Вызвать мастера
+        </a>
+        <a href="#ac-calculator" class="btn btn-dark">Рассчитать стоимость</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Dubai needs AC service -->
+  <section class="section">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="two-col-text">
+          <div class="section-head section-head--left">
+            <span class="sec-tag">Климат Дубая</span>
+            <h2>Почему кондиционеры в Дубае требуют особого обслуживания</h2>
+          </div>
+          <p>В Дубае кондиционер работает практически круглый год — 10–11 месяцев при температуре выше +30°C. Это создаёт нагрузку, несопоставимую с умеренным климатом: агрегаты работают на пределе мощности, фильтры забиваются песком и пылью, фреон утекает быстрее из-за постоянной нагрузки на компрессор.</p>
+          <p>Результат — снижение эффективности охлаждения, рост счёта за электричество и сокращение срока службы оборудования. Регулярное обслуживание каждые 3–4 месяца позволяет избежать дорогостоящего ремонта и продлить жизнь кондиционера на годы.</p>
+          <p>Siberia-Service обслуживает кондиционеры всех марок и типов: Samsung, LG, Daikin, Mitsubishi, Carrier, Midea, Gree, Haier. Наши мастера знают особенности каждой системы и работают с оборудованием любой сложности — от домашних сплит-систем до центральных кондиционеров в апартаментах.</p>
+        </div>
+        <div class="two-col-aside">
+          <div class="aside-card">
+            <h3>Признаки того, что нужен срочный выезд мастера</h3>
+            <ul class="checklist">
+              <li>Кондиционер работает, но не охлаждает</li>
+              <li>Из блока капает вода или появился иней</li>
+              <li>Странные звуки — треск, свист, стук</li>
+              <li>Неприятный запах при включении</li>
+              <li>Резко вырос счёт за электричество</li>
+              <li>Кондиционер не включается или отключается сам</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag">Что мы делаем</span>
+        <h2>Полный спектр услуг по кондиционерам</h2>
+        <p>Всё обслуживание в одном месте — от плановой чистки до сложного ремонта</p>
+      </div>
+      <div class="features-grid grid-3">
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </div>
+          <h3>Чистка кондиционера</h3>
+          <ul class="checklist">
+            <li>Промывка фильтров высокого давления</li>
+            <li>Очистка испарителя и теплообменника</li>
+            <li>Прочистка дренажной системы</li>
+            <li>Дезинфекция внутреннего блока</li>
+            <li>Очистка наружного блока и лопастей</li>
+          </ul>
+        </div>
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12L9 9m3 3l3-3"/><circle cx="12" cy="6" r="4"/></svg>
+          </div>
+          <h3>Заправка фреона</h3>
+          <ul class="checklist">
+            <li>Диагностика уровня хладагента</li>
+            <li>Определение места утечки</li>
+            <li>Заправка фреоном R410A / R22 / R32</li>
+            <li>Проверка давления в системе</li>
+            <li>Тест холодопроизводительности</li>
+          </ul>
+        </div>
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3>Диагностика и ремонт</h3>
+          <ul class="checklist">
+            <li>Полная диагностика всех систем</li>
+            <li>Замена компрессора и вентилятора</li>
+            <li>Ремонт платы управления</li>
+            <li>Устранение утечек хладагента</li>
+            <li>Замена конденсатора и испарителя</li>
+          </ul>
+        </div>
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+          </div>
+          <h3>Монтаж кондиционера</h3>
+          <ul class="checklist">
+            <li>Установка внутреннего и наружного блоков</li>
+            <li>Прокладка трасс и кабелей</li>
+            <li>Вакуумирование и заправка системы</li>
+            <li>Пусконаладочные работы</li>
+            <li>Инструктаж по эксплуатации</li>
+          </ul>
+        </div>
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Кассетные системы</h3>
+          <ul class="checklist">
+            <li>Обслуживание кассетных кондиционеров</li>
+            <li>Чистка кассетного блока</li>
+            <li>Замена фильтров-кассет</li>
+            <li>Регулировка жалюзи и потоков</li>
+            <li>Обслуживание чиллеров и фанкойлов</li>
+          </ul>
+        </div>
+
+        <div class="feat-item">
+          <div style="width:44px;height:44px;background:rgba(217,95,43,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Гарантийное обслуживание</h3>
+          <ul class="checklist">
+            <li>Контракт на регулярное обслуживание</li>
+            <li>Плановые визиты каждые 3 месяца</li>
+            <li>Приоритетный выезд при поломке</li>
+            <li>Скидки на запчасти и работы</li>
+            <li>Фотоотчёт после каждого визита</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="ac-calc" id="ac-calculator">
+    <div class="ac-calc-wrap">
+      <div class="section-head" style="margin-bottom:52px;">
+        <span class="sec-tag">Калькулятор</span>
+        <h2>Рассчитайте стоимость обслуживания</h2>
+        <p class="sec-sub">Выберите тип кондиционера, количество блоков и нужные работы — цена обновится автоматически</p>
+      </div>
+
+      <!-- Step 1: AC type -->
+      <div class="ac-step">
+        <div class="ac-step-hdr">
+          <span class="ac-step-n">01</span>
+          <span class="ac-step-name">Тип кондиционера</span>
+          <span class="ac-step-val" id="acTypeVal">Сплит-система</span>
+        </div>
+        <div class="ac-type-cards">
+          <label class="ac-tcard selected" onclick="selectAcType(this, 1.0, 'Сплит-система')">
+            <input type="radio" name="actype" checked/>
+            <div class="ac-tcard-icon">🏠</div>
+            <div class="ac-tcard-name">Сплит-система</div>
+            <div class="ac-tcard-sub">Стандартный настенный кондиционер для квартиры</div>
+            <div class="ac-tcard-mult">базовая цена</div>
+          </label>
+          <label class="ac-tcard" onclick="selectAcType(this, 1.4, 'Кассетный')">
+            <input type="radio" name="actype"/>
+            <div class="ac-tcard-icon">🏢</div>
+            <div class="ac-tcard-name">Кассетный</div>
+            <div class="ac-tcard-sub">Встроенный в потолок, для офисов и больших помещений</div>
+            <div class="ac-tcard-mult">×1.4 к цене</div>
+          </label>
+          <label class="ac-tcard" onclick="selectAcType(this, 1.7, 'Канальный / VRF')">
+            <input type="radio" name="actype"/>
+            <div class="ac-tcard-icon">🌀</div>
+            <div class="ac-tcard-name">Канальный / VRF</div>
+            <div class="ac-tcard-sub">Центральная система, скрытый монтаж, виллы и офисы</div>
+            <div class="ac-tcard-mult">×1.7 к цене</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 2: Quantity -->
+      <div class="ac-step">
+        <div class="ac-step-hdr">
+          <span class="ac-step-n">02</span>
+          <span class="ac-step-name">Количество блоков</span>
+          <span class="ac-step-val" id="acQtyVal">1 блок</span>
+        </div>
+        <div class="qty-widget">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <div class="qty-display">
+            <div class="qty-num" id="qtyNum">1</div>
+            <div class="qty-label">блоков</div>
+          </div>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+          <div style="margin-left:16px; font-size:13px; color:var(--muted);">Каждый дополнительный блок — со скидкой 10%</div>
+        </div>
+      </div>
+
+      <!-- Step 3: Services -->
+      <div class="ac-step">
+        <div class="ac-step-hdr">
+          <span class="ac-step-n">03</span>
+          <span class="ac-step-name">Выберите работы</span>
+        </div>
+        <div class="ac-options" id="acOptions">
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="150"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Чистка внутреннего блока</div>
+              <div class="ac-opt-desc">Промывка фильтров, очистка испарителя, дезинфекция</div>
+            </div>
+            <div class="ac-opt-price">150 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="120"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Чистка наружного блока</div>
+              <div class="ac-opt-desc">Очистка конденсатора и лопастей вентилятора</div>
+            </div>
+            <div class="ac-opt-price">120 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="280"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Заправка фреона R410A</div>
+              <div class="ac-opt-desc">Восстановление уровня хладагента, проверка давления</div>
+            </div>
+            <div class="ac-opt-price">280 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="80"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Диагностика системы</div>
+              <div class="ac-opt-desc">Проверка всех узлов, выявление неисправностей</div>
+            </div>
+            <div class="ac-opt-price">80 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="90"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Прочистка дренажа</div>
+              <div class="ac-opt-desc">Промывка дренажной трубки, устранение засоров</div>
+            </div>
+            <div class="ac-opt-price">90 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="350"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Монтаж кондиционера</div>
+              <div class="ac-opt-desc">Установка блоков, прокладка трасс, пуск системы</div>
+            </div>
+            <div class="ac-opt-price">350 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="130"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Демонтаж блока</div>
+              <div class="ac-opt-desc">Снятие и упаковка внутреннего или наружного блока</div>
+            </div>
+            <div class="ac-opt-price">130 AED</div>
+          </label>
+          <label class="ac-opt" onclick="event.preventDefault();toggleAcOpt(this)">
+            <input type="checkbox" data-price="60"/>
+            <div class="ac-opt-cb"></div>
+            <div class="ac-opt-info">
+              <div class="ac-opt-name">Замена фильтров</div>
+              <div class="ac-opt-desc">Замена стандартных или HEPA-фильтров на новые</div>
+            </div>
+            <div class="ac-opt-price">60 AED</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="ac-result" id="acResult">
+        <div>
+          <div class="ac-result-label">Предварительная стоимость</div>
+          <div class="ac-result-amount" id="acResultAmount"><span style="color:rgba(255,255,255,0.3)">—</span></div>
+          <div class="ac-result-hint" id="acResultHint">Выберите услуги для расчёта</div>
+          <div class="ac-result-breakdown" id="acResultBreakdown"></div>
+        </div>
+        <div class="ac-result-actions">
+          <a href="https://t.me/+971589552882" class="btn btn-tg" id="acResultCta" style="display:none" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Написать в Telegram →
+          </a>
+          <div style="font-size:12px;color:rgba(255,255,255,0.35);text-align:right;">Точная цена — после звонка мастера</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag">Мы работаем с</span>
+        <h2>Обслуживаем все марки кондиционеров</h2>
+      </div>
+      <div class="features-grid grid-3" style="gap:16px;">
+        <div class="feat-item feat-item--bordered" style="text-align:center;padding:24px;">
+          <div style="font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px;">Samsung · LG · Daikin</div>
+          <div style="font-size:13px;color:var(--muted);">Самые распространённые марки в Дубае</div>
+        </div>
+        <div class="feat-item feat-item--bordered" style="text-align:center;padding:24px;">
+          <div style="font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px;">Mitsubishi · Carrier · Trane</div>
+          <div style="font-size:13px;color:var(--muted);">Премиум-сегмент для вилл и офисов</div>
+        </div>
+        <div class="feat-item feat-item--bordered" style="text-align:center;padding:24px;">
+          <div style="font-size:18px;font-weight:800;color:var(--ink);margin-bottom:8px;">Gree · Midea · Haier · Aux</div>
+          <div style="font-size:13px;color:var(--muted);">Бюджетные марки с широкой сервисной базой</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="sec-tag">Вопросы и ответы</span>
+        <h2>Часто задаваемые вопросы</h2>
+      </div>
+      <div class="faq-list" style="max-width:720px;margin:0 auto;">
+        <div class="faq-item">
+          <button class="faq-q">Как часто нужно обслуживать кондиционер в Дубае?</button>
+          <div class="faq-a"><p>Рекомендуется раз в 3–4 месяца. В условиях Дубая кондиционеры работают практически без остановки, а песок и пыль быстро забивают фильтры. Плановое обслуживание 3–4 раза в год — оптимально для поддержания эффективности и долгого срока службы.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Можно ли чистить кондиционер самостоятельно?</button>
+          <div class="faq-a"><p>Фильтры можно промыть самостоятельно — это не сложно. Но очистка испарителя, теплообменника и дренажа требует специального оборудования и химии. Самостоятельная попытка может повредить плату управления или испаритель. Лучше доверить это мастеру.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Сколько стоит обслуживание кондиционера в Дубае?</button>
+          <div class="faq-a"><p>Стандартная чистка одного внутреннего блока — от 150 AED. Полное обслуживание с чисткой обоих блоков и заправкой фреона — от 450–550 AED за систему. Используйте наш калькулятор выше для точного расчёта по вашим задачам.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Как быстро приедет мастер?</button>
+          <div class="faq-a"><p>В большинстве случаев — в течение 2–4 часов после обращения в Telegram. Для планового обслуживания можно согласовать удобное время. Работаем ежедневно, включая выходные.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Какая гарантия на работы?</button>
+          <div class="faq-a"><p>Гарантия на все выполненные работы — 6 месяцев. На заправку фреона гарантия действует при условии, что утечка была устранена нашим мастером. На установку нового оборудования — до 1 года.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="wrap">
+      <div class="tg-block">
+        <div class="tg-block-text">
+          <h2>Кондиционер барахлит? Вызовите мастера сегодня</h2>
+          <p>Напишите в Telegram — уточним детали, назовём цену и согласуем удобное время визита.</p>
+        </div>
+        <a href="https://t.me/+971589552882" class="btn btn-tg btn--lg" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Вызвать мастера
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="index.html" class="footer-logo">Siberia<em>-Service</em></a>
+      <p class="footer-desc mt-16" data-i18n="footer.desc">Профессиональный ремонт квартир в Дубае с 2012 года. Гарантия 3 года.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.services">Услуги</h4>
+      <ul>
+        <li><a href="kosmeticheskiy-remont.html">Косметический ремонт</a></li>
+        <li><a href="kapitalnyy-remont.html">Капитальный ремонт</a></li>
+        <li><a href="dizaynersky-remont.html">Дизайнерский ремонт</a></li>
+        <li><a href="kondicionery.html">Кондиционеры</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.company">Компания</h4>
+      <ul>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Telegram</h4>
+      <ul>
+        <li><a href="https://t.me/+971589552882" target="_blank">Написать нам</a></li>
+        <li><a href="https://t.me/+971589552882" target="_blank">Вызвать мастера</a></li>
+        <li><a href="https://t.me/+971589552882" target="_blank">Получить смету</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.copy">© 2024 Siberia-Service. Все права защищены.</span>
+    <a href="#" data-i18n="footer.policy">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+// ── AC CALCULATOR ──
+let acTypeMult = 1.0;
+let acQty = 1;
+
+function selectAcType(el, mult, name) {
+  document.querySelectorAll('.ac-tcard').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  acTypeMult = mult;
+  document.getElementById('acTypeVal').textContent = name;
+  calcAC();
+}
+
+function changeQty(delta) {
+  acQty = Math.max(1, Math.min(20, acQty + delta));
+  document.getElementById('qtyNum').textContent = acQty;
+  document.getElementById('acQtyVal').textContent = acQty + ' ' + (acQty === 1 ? 'блок' : acQty < 5 ? 'блока' : 'блоков');
+  calcAC();
+}
+
+function toggleAcOpt(el) {
+  el.classList.toggle('checked');
+  const cb = el.querySelector('input[type="checkbox"]');
+  if (cb) cb.checked = !cb.checked;
+  calcAC();
+}
+
+function calcAC() {
+  let basePerUnit = 0;
+  const lines = [];
+
+  document.querySelectorAll('#acOptions .ac-opt.checked').forEach(opt => {
+    const price = parseInt(opt.querySelector('input').dataset.price);
+    const name = opt.querySelector('.ac-opt-name').textContent;
+    basePerUnit += price;
+    lines.push(name + ': ' + price + ' AED');
+  });
+
+  const amountEl = document.getElementById('acResultAmount');
+  const hintEl = document.getElementById('acResultHint');
+  const breakEl = document.getElementById('acResultBreakdown');
+  const ctaEl = document.getElementById('acResultCta');
+
+  if (basePerUnit === 0) {
+    amountEl.innerHTML = '<span style="color:rgba(255,255,255,0.3)">—</span>';
+    hintEl.textContent = 'Выберите услуги для расчёта';
+    breakEl.textContent = '';
+    ctaEl.style.display = 'none';
+    return;
+  }
+
+  // Apply qty discount (10% off per extra unit)
+  let total = 0;
+  for (let i = 0; i < acQty; i++) {
+    const discount = Math.min(i * 0.1, 0.4); // max 40% discount
+    total += basePerUnit * acTypeMult * (1 - discount);
+  }
+  total = Math.round(total / 10) * 10;
+
+  amountEl.textContent = total.toLocaleString('ru-RU') + ' AED';
+  hintEl.textContent = acQty + (acQty === 1 ? ' блок' : acQty < 5 ? ' блока' : ' блоков') + ' · ' + (acTypeMult > 1 ? 'коэф. ×' + acTypeMult : 'сплит-система');
+  breakEl.textContent = lines.slice(0, 3).join(' · ') + (lines.length > 3 ? ' · ...' : '');
+  ctaEl.style.display = 'flex';
+}
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
