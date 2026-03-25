@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Orange rounded background -->
+  <rect width="32" height="32" rx="6" fill="#D95F2B"/>
+  <!-- Roof -->
+  <polygon points="16,4 28,15 4,15" fill="white"/>
+  <!-- House body -->
+  <rect x="6" y="14" width="20" height="14" fill="white"/>
+  <!-- Door -->
+  <rect x="12.5" y="19" width="7" height="9" rx="0.5" fill="#D95F2B"/>
+  <!-- Left window -->
+  <rect x="8" y="17" width="3.5" height="3.5" rx="0.5" fill="#D95F2B"/>
+  <!-- Right window -->
+  <rect x="20.5" y="17" width="3.5" height="3.5" rx="0.5" fill="#D95F2B"/>
+</svg>
