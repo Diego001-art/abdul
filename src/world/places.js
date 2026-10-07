@@ -61,15 +61,43 @@ function spring() {
   g.add(w); return g;
 }
 
+function mosque() { // мечеть с минаретом
+  const g = new THREE.Group(), w = mat('#e9e2d2'), r = mat('#3f7a5a');
+  const hall = new THREE.Mesh(new THREE.BoxGeometry(12, 6, 10), w); hall.position.y = 3;
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(3.5, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), r); dome.position.y = 6;
+  const min = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.1, 18, 8), w); min.position.set(7, 9, -4);
+  const cap = new THREE.Mesh(new THREE.ConeGeometry(1.2, 3, 8), r); cap.position.set(7, 19.5, -4);
+  const moon = new THREE.Mesh(new THREE.TorusGeometry(0.4, 0.08, 4, 10, Math.PI * 1.4), mat('#e8c872')); moon.position.set(7, 21.6, -4);
+  g.add(hall, dome, min, cap, moon); return g;
+}
+function shop() { // «Магазин у Братухи» — как на фото
+  const g = new THREE.Group();
+  const tex = new THREE.TextureLoader().load('assets/tex/wall.jpg'); tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(2, 1); tex.colorSpace = THREE.SRGBColorSpace;
+  const body = new THREE.Mesh(new THREE.BoxGeometry(8, 3.5, 6), new THREE.MeshLambertMaterial({ map: tex })); body.position.y = 1.75;
+  const roof = new THREE.Mesh(new THREE.BoxGeometry(8.6, 0.2, 6.6), mat('#a8adb1')); roof.position.y = 3.6; roof.rotation.x = 0.08;
+  const cv = document.createElement('canvas'); cv.width = 256; cv.height = 128;
+  const c = cv.getContext('2d'); c.fillStyle = '#f4f1ea'; c.fillRect(0, 0, 256, 128); c.strokeStyle = '#333'; c.lineWidth = 6; c.strokeRect(3, 3, 250, 122);
+  c.fillStyle = '#222'; c.font = 'bold 34px sans-serif'; c.textAlign = 'center'; c.fillText('МАГАЗИН', 128, 44); c.fillText('У', 128, 82); c.fillText('БРАТУХИ', 128, 118);
+  const signTex = new THREE.CanvasTexture(cv); signTex.colorSpace = THREE.SRGBColorSpace;
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.2), new THREE.MeshBasicMaterial({ map: signTex })); sign.position.set(0, 2.6, 3.02);
+  g.add(body, roof, sign); return g;
+}
+function pasture() { // пастбище: каменная ограда
+  const g = new THREE.Group(), m = mat('#8a8274');
+  for (let i = 0; i < 40; i++) { const a = i / 40 * Math.PI * 2, r = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.9, 0.8), m); r.position.set(Math.cos(a) * 14, 0.4, Math.sin(a) * 14); r.rotation.y = -a; if (i % 13) g.add(r); }
+  return g;
+}
+
 export async function createPlaces(scene, terrain) {
   const cfg = await (await fetch('data/places.json')).json();
   const out = {};
-  const makers = { cave, stone, tower, spring };
+  const makers = { cave, stone, tower, spring, pasture, mosque, shop };
   for (const p of cfg.places) {
     const { x, z } = sectorPos(p.sector, p.dx, p.dz);
     const y = terrain.heightAt(x, z);
     const obj = (makers[p.type] || stone)();
     obj.position.set(x, y - 0.5, z);
+    if (p.type === 'shop' || p.type === 'mosque') obj.lookAt(0, y - 0.5, 0); // фасадом к центру села
     obj.traverse(o => { o.castShadow = true; o.receiveShadow = true; });
     scene.add(obj);
     out[p.id] = { ...p, pos: new THREE.Vector3(x, y, z), object: obj };

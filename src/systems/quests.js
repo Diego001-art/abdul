@@ -1,5 +1,5 @@
 // Квесты из data/quests.json. Прогресс сохраняется в браузере.
-export async function createQuests({ inventory, places, onDialog, onChange, onEvent }) {
+export async function createQuests({ inventory, places, hero, onDialog, onChange, onEvent, onItems }) {
   const cfg = await (await fetch('data/quests.json')).json();
   let st = {};
   try { st = JSON.parse(localStorage.getItem('quests')) || {}; } catch {}
@@ -9,10 +9,14 @@ export async function createQuests({ inventory, places, onDialog, onChange, onEv
   function advance(q) {
     const s = step(q);
     if (s.take) for (const id in s.take) inventory.remove(id, s.take[id]);
+    if (s.give) for (const id in s.give) inventory.add(id, s.give[id]);
+    if (s.take || s.give) onItems(s.take, s.give);
+    if (s.xp) hero.addXp(s.xp);
     if (s.reward) onEvent(s.reward);
     st[q.id] = (st[q.id] || 0) + 1; save();
     const next = step(q);
     if (next && next.type === 'event') { onEvent(next.event); if (next.dialog) onDialog(next.dialog); advance(q); return; }
+    if (next && next.type === 'collect' && next.dialog) onDialog(next.dialog);
     onChange();
   }
   const hasItems = (s) => !s.take || Object.entries(s.take).every(([id, n]) => (inventory.all()[id] || 0) >= n);
