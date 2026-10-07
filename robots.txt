@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://siberia-service.ae/sitemap.xml
