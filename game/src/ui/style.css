@@ -1,0 +1,13 @@
+html,body{margin:0;height:100%;overflow:hidden;background:#87a9c9;font-family:system-ui,sans-serif;color:#fff}
+canvas{display:block}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:24px;background:#2b3a2f;z-index:10}
+#hud>*{position:fixed;text-shadow:0 1px 3px #000}
+#hint{bottom:90px;left:50%;transform:translateX(-50%);font-size:18px;background:#0007;padding:6px 14px;border-radius:8px;display:none}
+#houseInfo{top:12px;left:50%;transform:translateX(-50%);background:#0006;padding:6px 14px;border-radius:8px;display:none}
+#toast{top:60px;left:50%;transform:translateX(-50%);font-size:18px}
+#help{left:12px;bottom:12px;font-size:13px;background:#0006;padding:8px 10px;border-radius:8px;line-height:1.5}
+#langBtn{right:12px;top:12px;padding:6px 12px;border:0;border-radius:8px;background:#c9a24a;color:#222;font-weight:bold;cursor:pointer}
+#inventory{position:fixed;right:12px;top:56px;width:240px;background:#2b241cdd;border:2px solid #c9a24a;border-radius:10px;padding:10px}
+#inventory h2{margin:0 0 8px;font-size:18px;color:#e8c872}
+#inventory .row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #fff2}
+.hidden{display:none}
